@@ -1,0 +1,57 @@
+# Large model files and directories
+flan-t5-base/
+sft_model/
+sft_output/
+wandb/
+
+# Model file extensions
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.pkl
+*.pickle
+
+# Training checkpoints
+checkpoint-*/
+checkpoints/
+
+# Logs and temporary files
+logs/
+*.log
+*.out
+
+# Data directories (if they contain large datasets)
+data/
+reward_data/
+sft_data/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.temp
