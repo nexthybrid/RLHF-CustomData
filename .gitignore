@@ -4,6 +4,8 @@ sft_model/
 sft_output/
 wandb/
 
+untracked_zip_files/
+
 # Model file extensions
 *.safetensors
 *.bin

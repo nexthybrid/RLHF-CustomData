@@ -11,6 +11,7 @@ pip install torch torchvision torchaudio  # Apple Silicon version
 pip install transformers datasets accelerate peft trl
 pip install rouge-score nltk sacrebleu wandb
 pip install sentencepiece
+pip install matplotlib
 ```
 
 ## Development
@@ -22,7 +23,7 @@ mkdir data sft_data
 
 2. Downloaded the MetaMathQA dataset
 
-From `https://huggingface.co/datasets/meta-math/MetaMathQA/tree/main` into `RLHF-CustomData/sft_data/`
+From `https://huggingface.co/datasets/meta-math/MetaMathQA/tree/main` into `RLHF-CustomData/sft_model/`
 
 3. Ran `prep_dataset.py` to prepare a small dataset for training.
 
@@ -34,4 +35,14 @@ Tokenizer files: tokenizer.json, tokenizer_config.json, special_tokens_map.json,
 
 5. Run the `train_sft.py` script
 
+Initially taking 100 entries only; now taking 500 entries. Initially training for 1 epoch only; now training for 3 epochs.
+
 You may need to login/register a wandb account.
+
+6. Runs the `test_models.py` script
+
+This shows comparison between the original and fine-tuned model output, and the ROUGE-L scores.
+
+## Updates
+
+10/25 - Developed Colab version (train on Colab, download the model, inference locally)

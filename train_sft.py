@@ -18,17 +18,17 @@ def tokenize(examples):
 tokenized_ds = dataset.map(tokenize, batched=True)
 
 # Subset for local trial
-tokenized_ds = tokenized_ds['train'].shuffle().select(range(100))
+tokenized_ds = tokenized_ds['train'].shuffle().select(range(500))  # Increase to 500 samples
 
 training_args = TrainingArguments(
     output_dir='sft_output',
-    num_train_epochs=1,
+    num_train_epochs=3,  # Increase to 3 epochs
     per_device_train_batch_size=2,
     save_steps=50,
     logging_steps=10,
     fp16=False,
     use_mps_device=torch.backends.mps.is_available(),
-    report_to="wandb"  # Enable wandb logging
+    report_to="wandb"
 )
 
 trainer = Trainer(model=model, args=training_args, train_dataset=tokenized_ds)
